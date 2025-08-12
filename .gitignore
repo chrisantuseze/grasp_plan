@@ -5,3 +5,4 @@ build
 outputs
 M2T2
 grasp_plan/dofbot/assets
+.DS_Store
