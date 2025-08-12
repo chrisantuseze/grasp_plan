@@ -1,0 +1,54 @@
+<mujoco model="stacking_scene">
+    <option timestep='0.0025' iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="elliptic" gravity="0 0 -9.81"/>
+    <include file="../dofbot.xml"/>
+    <include file="basic_scene_b.xml"/>
+
+     <!-- Assets: Meshes + Textures + Materials -->
+    <asset>
+        <!-- Master Chef Can -->
+        <texture name="can_tex" type="2d" file="../ycb/002_master_chef_can/google_16k/texture_map.png"/>
+        <material name="can_mat" texture="can_tex" specular="0.5" shininess="0.3"/>
+        <mesh name="ycb_can" file="../ycb/002_master_chef_can/google_16k/textured.obj"/>
+
+        <!-- Cracker Box -->
+        <texture name="cracker_tex" type="2d" file="../ycb/003_cracker_box/google_16k/texture_map.png"/>
+        <material name="cracker_mat" texture="cracker_tex" specular="0.5" shininess="0.3"/>
+        <mesh name="ycb_cracker_box" file="../ycb/003_cracker_box/google_16k/textured.obj"/>
+    </asset>
+
+    <worldbody>
+      <!-- Place objects on top of the table -->
+      <body name="box_red" pos="0.250 0.48 0.07">
+        <geom type="box" size="0.02 0.02 0.02" mass="0.2" rgba="1 0 0 1" contype="1" conaffinity="1"/>
+        <joint name="box_red_joint" type="free"/>
+      </body>
+      <body name="box_green" pos="0.250 0.48 0.110">
+        <geom type="box" size="0.02 0.02 0.02" mass="0.2" rgba="0 1 0 1" contype="1" conaffinity="1"/>
+        <joint name="box_green_joint" type="free"/>
+      </body>
+      <body name="box_blue" pos="0.250 0.48 0.150">
+        <geom type="box" size="0.02 0.02 0.02" rgba="0 0 1 1" contype="1" conaffinity="1"/>
+        <joint name="box_blue_joint" type="free"/>
+      </body>
+      <body name="box_yellow" pos="0.30 0.40 0.07">
+        <geom type="box" size="0.02 0.02 0.02" rgba="1 1 0 1" contype="1" conaffinity="1"/>
+        <joint name="box_yellow_joint" type="free"/>
+      </body>
+
+      <!-- Master Chef Can -->
+      <body name="master_chef_can" pos="0.25 0.51 0.07">
+          <joint name="can_joint" type="free"/>
+          <geom type="mesh" mesh="ycb_can" material="can_mat"
+                mass="0.2" contype="1" conaffinity="1"/>
+      </body>
+
+      <!-- Cracker Box -->
+      <body name="cracker_box" pos="0.24 0.45 0.07">
+          <joint name="cracker_box_joint" type="free"/>
+          <geom type="mesh" mesh="ycb_cracker_box" material="cracker_mat"
+                mass="0.5" contype="1" conaffinity="1"/>
+      </body>
+    </worldbody>
+
+    
+</mujoco>

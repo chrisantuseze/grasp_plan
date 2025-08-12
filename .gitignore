@@ -4,5 +4,7 @@ __pycache__
 build
 outputs
 M2T2
-grasp_plan/dofbot/assets
+grasp_plan/dofbot/assets/ycb
+grasp_plan/dofbot/assets/textures
+grasp_plan/dofbot/assets/objects
 .DS_Store

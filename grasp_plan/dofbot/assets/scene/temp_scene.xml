@@ -1,0 +1,46 @@
+<mujoco model="base_scene">
+
+    <include file="../dofbot.xml" />
+    <include file="basic_scene_b.xml" />
+    
+    <asset>
+
+    <texture name="024_bowl_0_texture" type="2d" file="../ycb/024_bowl/google_16k/texture_map.png" />
+    <material name="024_bowl_0_material" texture="024_bowl_0_texture" specular="0.5" shininess="0.3" />
+    <mesh name="024_bowl_0_mesh" file="../ycb/024_bowl/google_16k/textured.obj" scale="0.5 0.5 0.5" />
+  <texture name="013_apple_0_texture" type="2d" file="../ycb/013_apple/google_16k/texture_map.png" />
+    <material name="013_apple_0_material" texture="013_apple_0_texture" specular="0.5" shininess="0.3" />
+    <mesh name="013_apple_0_mesh" file="../ycb/013_apple/google_16k/textured.obj" scale="0.5 0.5 0.5" />
+  <texture name="003_cracker_box_0_texture" type="2d" file="../ycb/003_cracker_box/google_16k/texture_map.png" />
+    <material name="003_cracker_box_0_material" texture="003_cracker_box_0_texture" specular="0.5" shininess="0.3" />
+    <mesh name="003_cracker_box_0_mesh" file="../ycb/003_cracker_box/google_16k/textured.obj" scale="0.5 0.5 0.5" />
+  </asset>
+
+    <worldbody>
+
+    <body name="024_bowl_0" pos="0.235218 -0.015888 0.070000" quat="0.999982 0.000000 0.000000 0.005969">
+      <joint name="024_bowl_0_joint" type="free" damping="0.01" armature="0.001" />
+      
+      <geom name="024_bowl_0_geom" type="mesh" mesh="024_bowl_0_mesh" mass="0.2" contype="1" conaffinity="1" solimp="0.95 0.99 0.001" solref="0.004 1" friction="0.5 0.1 0.1" />
+            
+      <site name="024_bowl_0_center_site" type="sphere" size="0.005" rgba="1 0 0 0.5" />
+    </body>
+
+  <site name="024_bowl_0_target" pos="0.235218 -0.015888 0.070000" size="0.02 0.02 0.001" rgba="0 1 0 0.3" type="cylinder" /><body name="013_apple_0" pos="0.160001 0.170513 0.085000" quat="1.000000 0.000000 0.000000 -0.000794">
+      <joint name="013_apple_0_joint" type="free" damping="0.01" armature="0.001" />
+      
+      <geom name="013_apple_0_geom" type="mesh" mesh="013_apple_0_mesh" mass="0.2" contype="1" conaffinity="1" solimp="0.95 0.99 0.001" solref="0.004 1" friction="0.5 0.1 0.1" />
+            
+      <site name="013_apple_0_center_site" type="sphere" size="0.005" rgba="1 0 0 0.5" />
+    </body>
+
+  <site name="013_apple_0_target" pos="0.160001 0.170513 0.085000" size="0.02 0.02 0.001" rgba="0 1 0 0.3" type="cylinder" /><body name="003_cracker_box_0" pos="0.177232 -0.238502 0.140000" quat="0.999183 0.000000 0.000000 0.040413">
+      <joint name="003_cracker_box_0_joint" type="free" damping="0.01" armature="0.001" />
+      
+      <geom name="003_cracker_box_0_geom" type="mesh" mesh="003_cracker_box_0_mesh" mass="0.2" contype="1" conaffinity="1" solimp="0.95 0.99 0.001" solref="0.004 1" friction="0.5 0.1 0.1" />
+            
+      <site name="003_cracker_box_0_center_site" type="sphere" size="0.005" rgba="1 0 0 0.5" />
+    </body>
+
+  <site name="003_cracker_box_0_target" pos="0.177232 -0.238502 0.140000" size="0.02 0.02 0.001" rgba="0 1 0 0.3" type="cylinder" /></worldbody>
+</mujoco>

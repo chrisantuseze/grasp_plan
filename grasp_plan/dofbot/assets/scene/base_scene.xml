@@ -1,0 +1,13 @@
+<mujoco model="base_scene">
+
+    <include file="../dofbot.xml" />
+    <include file="basic_scene_b.xml" />
+    
+    <asset>
+
+    </asset>
+
+    <worldbody>
+
+    </worldbody>
+</mujoco>
