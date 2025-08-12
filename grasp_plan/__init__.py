@@ -1,0 +1,1 @@
+from .dofbot.envs import table_scene_env # This line ensures the env.py is loaded and registered
